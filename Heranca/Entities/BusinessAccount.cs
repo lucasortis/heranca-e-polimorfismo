@@ -1,15 +1,15 @@
 ﻿namespace Heranca.Entities
 {
-    class AccountBusiness : Account
+    class BusinessAccount : Account
     {
         public double LoanLimit { get; set; }
 
-        public AccountBusiness()
+        public BusinessAccount()
         {
 
         }
 
-        public AccountBusiness(double loanLimit, int number, string holder, double balance) : base(number, holder, balance)
+        public BusinessAccount(double loanLimit, int number, string holder, double balance) : base(number, holder, balance)
         {
             LoanLimit = loanLimit;
             Number = number;
