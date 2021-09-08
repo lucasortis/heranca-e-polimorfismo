@@ -1,7 +1,7 @@
 ﻿using System;
-using Heranca.Entities;
+using HerancaEPolimorfismo.Entities;
 
-namespace Heranca
+namespace HerancaEPolimorfismo
 {
     class Program
     {
@@ -15,7 +15,7 @@ namespace Heranca
 
             //Upcasting
 
-            SavingsAccount acc2 = new SavingsAccount(10, 2121, "Alex", 2000);
+            SavingsAccount acc2 = new SavingsAccount(10, "Alex", 2000, 0.05);
             acc2.UpdateBalance();
             Console.WriteLine(acc2.Balance);
             Account acc3 = acc2;
@@ -41,6 +41,15 @@ namespace Heranca
                 acc6.UpdateBalance();
                 Console.WriteLine("Update");
             }
-        }
+
+            //sobrescrita
+            Account accTesteSobrescrita = new Account(1001, "João", 500.0);
+            Account accTesteSobrescrita2 = new SavingsAccount(1002, "Anna", 500.0, 0.01);
+
+            accTesteSobrescrita.Withdraw(10);
+            accTesteSobrescrita2.Withdraw(10);
+
+            Console.WriteLine("João's balance: " + accTesteSobrescrita.Balance);
+            Console.WriteLine("Ana's balance: " + accTesteSobrescrita2.Balance);        }
     }
 }

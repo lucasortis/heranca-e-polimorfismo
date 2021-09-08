@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Globalization;
-namespace Heranca.Entities
+namespace HerancaEPolimorfismo.Entities
 {
     class SavingsAccount : Account
     {
@@ -11,7 +11,7 @@ namespace Heranca.Entities
 
         }
 
-        public SavingsAccount(double interestRate, int number, string holder, double balance)
+        public SavingsAccount(int number, string holder, double balance, double interestRate)
             : base(number, holder, balance)
         {
             InterestRate = interestRate;
@@ -20,6 +20,12 @@ namespace Heranca.Entities
         public void UpdateBalance()
         {
             Balance += Balance * InterestRate;
+        }
+
+        public override void Withdraw(double amount)
+        {
+            base.Withdraw(amount);
+            Balance -= 2.0;
         }
     }
 }

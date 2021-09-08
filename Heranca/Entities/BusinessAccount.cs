@@ -1,4 +1,4 @@
-﻿namespace Heranca.Entities
+﻿namespace HerancaEPolimorfismo.Entities
 {
     class BusinessAccount : Account
     {

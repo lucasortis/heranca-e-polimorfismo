@@ -1,4 +1,4 @@
-﻿namespace Heranca.Entities
+﻿namespace HerancaEPolimorfismo.Entities
 {
     class Account
     {
@@ -18,9 +18,9 @@
             Balance = balance;
         }
 
-        public void Withdraw(double amount)
+        public virtual void Withdraw(double amount)
         {
-            Balance -= amount;
+            Balance -= amount + 5.0;
         }
 
         public void Depoist(double amount)
